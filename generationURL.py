@@ -3,14 +3,17 @@ app = Flask(__name__)
 
 
 @app.route('/')
-def index(): pass
+def index(): 
+    return {"message": "Hello World!"}
 
 
 @app.route('/login')
-def login(): pass
+def login(): 
+    return {"message": "It's work!"}
 
 @app.route('/user/<username>')
-def profile(username): pass
+def profile(username): 
+    return {"message": f"Hello, {username}"}
 
 
 with app.test_request_context():
