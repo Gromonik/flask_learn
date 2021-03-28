@@ -25,9 +25,16 @@ def index():
     return render_template("index.html")
 
 
+@app.route('/posts')
+def posts():
+    articles = Article.query.order_by(Article.date).all()
+    return render_template("about.html", articles=articles)
+
+
 @app.route('/about')
 def about():
     return render_template("about.html")
+
 
 @app.route('/create-article', methods = ['POST', 'GET'])
 def create_article():
