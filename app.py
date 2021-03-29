@@ -28,7 +28,7 @@ def index():
 @app.route('/posts')
 def posts():
     articles = Article.query.order_by(Article.date).all()
-    return render_template("about.html", articles=articles)
+    return render_template("posts.html", articles=articles)
 
 
 @app.route('/about')
